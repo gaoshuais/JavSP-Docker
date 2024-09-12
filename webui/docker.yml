@@ -4,11 +4,11 @@ services:
     image: javsp_image:latest
     container_name: javsp
     environment:
-      - PUID=${PUID}    # 填写自己要指定的，不指定可以删除
-      - PGID=${PGID}    # 填写自己要指定的，不指定可以删除
-      - TZ=${TZ}        # 填写自己要指定的，不指定可以删除
+      - PUID=0 # 填写自己要指定的，不指定可以删除
+      - PGID=0 # 填写自己要指定的，不指定可以删除
+      - TZ=Asia/Shanghai # 填写自己要指定的，不指定可以删除
     volumes:
-      - ${media_disk}/pool/video:/video   # 映射存放影片的目录
+      - /mnt/dm-4/.ugreen_nas/96444/media/links/小电影/:/video # 映射存放影片的目录
     ports:
-      - 8501:8501                              
+      - 8501:8501
     restart: always
